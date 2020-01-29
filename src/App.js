@@ -44,6 +44,15 @@ class Calculator extends React.Component
             expression:''
         }))
     }
+    handleBtnrst=(value)=>{
+        this.setState(()=>({
+            result:'',
+            expression:''
+        }))
+    }
+
+
+
     handleBtnbck=(value)=>{
         const oneback=this.state.expression.length
         this.setState((prevState)=>({
@@ -68,6 +77,7 @@ class Calculator extends React.Component
                 <h2>{this.state.result}</h2>
             <Table handleBtnclik={this.handleBtnclik}  handleBtnEqual={this.handleBtnEqual}  
             handleBtnclr={this.handleBtnclr}
+            handleBtnrst={this.handleBtnrst}
             handleBtnbck={this.handleBtnbck}/>
             {console.log(this.state.expression)}
             {console.log(this.state.result)}
